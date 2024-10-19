@@ -29,8 +29,24 @@ def load_all_models(directory):
 
 st.set_page_config(page_title="scDEL Calculator", page_icon="🧬", layout="wide")
 
-
+st.image("CSi_logo.png")
 st.title("scDEL Calculator")
+st.subheader("single cell Double Expressor Lymphoma", divider="gray")
+st.markdown(
+    """
+    <style>
+    header[data-testid="stHeader"]{
+        background-repeat: repeat;
+        background-size: contain;
+        height: 10%;
+    }
+    
+    section[data-testid="stSidebar"] {
+        top: 10%; 
+      }
+    </style>""",
+    unsafe_allow_html=True,
+)
 
 models = load_all_models('model_test')
 
@@ -110,13 +126,13 @@ if st.button("Calculate Relapse Risk"):
         majority_predictions = {name: prob for name, prob in predictions.items() if (prob > 0.5) == majority_high}
         minority_predictions = {name: prob for name, prob in predictions.items() if (prob > 0.5) != majority_high}
         
-        st.markdown("<span style='color: #4caf50; font-weight: bold;'>Models in Majority:</span>", unsafe_allow_html=True)
-        for name in majority_predictions.keys():
-            st.markdown(f"- {name}")
+        with st.expander("Models in Majority"):
+            for name in majority_predictions.keys():
+                st.markdown(f"- {name}")
         
-        st.markdown("<br><span style='color: #ff7043; font-weight: bold;'>Models in Minority:</span>", unsafe_allow_html=True)
-        for name in minority_predictions.keys():
-            st.markdown(f"- {name}")
+        with st.expander("Models in Minority"):
+            for name in minority_predictions.keys():
+                st.markdown(f"- {name}")
         
     except Exception as e:
         st.error(f"An error occurred while calculating the relapse risk: {str(e)}")
@@ -126,7 +142,7 @@ if st.button("Calculate Relapse Risk"):
 st.sidebar.title("About scDEL Calculator")
 st.sidebar.info("""
     The scDEL Calculator is an advanced tool for assessing relapse risk in Diffuse Large B-Cell Lymphoma (DLBCL) patients. 
-    It utilizes machine learning models to provide accurate risk assessments based on key biomarkers.
+    It utilizes machine learning models trained on 426 samples to predict 2yr relapse risk. This tool has not yet been licensed for clinical use and it's use must be considered experimental.
 
     **How to use:**
     1. Enter the patient's Cell of Origin (GCB or non-GCB)
@@ -136,9 +152,10 @@ st.sidebar.info("""
     For more information or support, please contact the SAIL Lab CSI.
 """)
 
+url = "https://aacrjournals.org/cancerdiscovery/article/13/5/1144/726201/Patterns-of-Oncogene-Coexpression-at-Single-Cell"
 st.sidebar.markdown("---")
 st.sidebar.markdown("References:")
-st.sidebar.markdown("Hoppe, Michal Marek, et al. “Patterns of Oncogene Coexpression at Single-Cell Resolution Influence Survival in Lymphoma.” American Association for Cancer Research, American Association for Cancer Research, 4 May 2023, https://bitly.cx/Jxcoz")
+st.sidebar.markdown("[Hoppe, Michal Marek, et al. Patterns of oncogene coexpression at single-cell resolution influence survival in lymphoma. Cancer discovery 13.5 (2023): 1144-1163.](%s)" % url)
 st.sidebar.markdown("---")
 st.sidebar.markdown("Created by Kanav and Shruti - SAIL Lab CSI")
 st.sidebar.markdown("© 2024 SAIL Lab. All rights reserved.")
