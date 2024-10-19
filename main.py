@@ -149,7 +149,7 @@ st.sidebar.info("""
     2. Adjust the sliders or enter values for MYC, BCL2, and BCL6 percentages
     3. Click 'Calculate Relapse Risk' to view the results
 
-    For more information or support, please contact the SAIL Lab CSI.
+    For more information or support, please contact the Spatial Analysis in Lymphoma (SAIL) Lab CSI https://csi.nus.edu.sg/researcher/anand-jeyasekharan/
 """)
 
 url = "https://aacrjournals.org/cancerdiscovery/article/13/5/1144/726201/Patterns-of-Oncogene-Coexpression-at-Single-Cell"
