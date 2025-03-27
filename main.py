@@ -143,6 +143,7 @@ if st.button("Calculate Relapse Risk"):
 st.sidebar.title("About scDEL Calculator")
 st.sidebar.info("""
     The scDEL Calculator is an advanced tool for assessing relapse risk in Diffuse Large B-Cell Lymphoma (DLBCL) patients, based on % positivity of the oncogenes MYC, BCL2, and BCL6 (as scored by routine immunohistochemistry), taking into account the probability of oncogenic co-expression (Hoppe et al, Cancer Discovery 2023). It utilizes machine learning models trained to predict 2yr relapse risk. This tool has not yet been licensed for clinical use and it's use must be considered experimental.
+    
     **How to use:**
     1. Enter the patient's Cell of Origin (GCB or non-GCB)
     2. Adjust the sliders or enter values for MYC, BCL2, and BCL6 percentages
