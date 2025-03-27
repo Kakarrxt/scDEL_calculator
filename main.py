@@ -103,7 +103,7 @@ if st.button("Calculate Relapse Risk"):
         st.subheader("Final Prediction:")
         st.markdown(f"<div style='background-color: {bg_color}; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>"
                     f"<span style='color: #ffffff; font-size: 24px; font-weight: bold;'>"
-                    f"{risk_level} Risk of Relapse</span><br>"
+                    f"{risk_level} of Relapse</span><br>"
                     f"<span style='color: #ffffff; font-size: 18px;'>Average Probability: {avg_probability:.2%}</span>"
                     "</div>", unsafe_allow_html=True)
         
