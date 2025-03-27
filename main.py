@@ -32,7 +32,7 @@ st.set_page_config(page_title="scDEL Calculator", page_icon="🧬", layout="wide
 
 st.image("CSi_logo.png")
 st.title("scDEL Calculator")
-st.subheader("single cell Double Expressor Lymphoma", divider="gray")
+st.subheader("Single-Cell resolved Double Expressor Lymphoma", divider="gray")
 st.markdown(
     """
     <style>
@@ -91,7 +91,7 @@ if st.button("Calculate Relapse Risk"):
         if avg_probability < 0.33:
             risk_level = "Low"
             bg_color = "#4caf50"  # Green
-        elif avg_probability < 0.66:
+        elif avg_probability < 0.5:
             risk_level = "Medium"
             bg_color = "#d9b238"  # Yellow
         else:
@@ -142,9 +142,7 @@ if st.button("Calculate Relapse Risk"):
 
 st.sidebar.title("About scDEL Calculator")
 st.sidebar.info("""
-    The scDEL Calculator is an advanced tool for assessing relapse risk in Diffuse Large B-Cell Lymphoma (DLBCL) patients. 
-    It utilizes machine learning models trained on 426 samples to predict 2yr relapse risk. This tool has not yet been licensed for clinical use and it's use must be considered experimental.
-
+    The scDEL Calculator is an advanced tool for assessing relapse risk in Diffuse Large B-Cell Lymphoma (DLBCL) patients, based on % positivity of the oncogenes MYC, BCL2, and BCL6 (as scored by routine immunohistochemistry), taking into account the probability of oncogenic co-expression (Hoppe et al, Cancer Discovery 2023). It utilizes machine learning models trained to predict 2yr relapse risk. This tool has not yet been licensed for clinical use and it's use must be considered experimental.
     **How to use:**
     1. Enter the patient's Cell of Origin (GCB or non-GCB)
     2. Adjust the sliders or enter values for MYC, BCL2, and BCL6 percentages
