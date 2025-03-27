@@ -157,8 +157,8 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("References:")
 st.sidebar.markdown("[Hoppe, Michal Marek, et al. Patterns of oncogene coexpression at single-cell resolution influence survival in lymphoma. Cancer discovery 13.5 (2023): 1144-1163.](%s)" % url)
 st.sidebar.markdown("---")
-st.sidebar.markdown("Created by Kanav and Shruti - SAIL Lab CSI")
-st.sidebar.markdown("© 2024 SAIL Lab. All rights reserved.")
+st.sidebar.markdown("Created by Kanav and Shruti - Cancer Cartography Lab CSI")
+st.sidebar.markdown("© 2024 Cancer Cartography Lab. All rights reserved.")
 
 hide_streamlit_style = """
             <style>
